@@ -4,7 +4,8 @@
   "description": "google oauth project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "builddocs": "apidoc -i ./ -o apidoc/ -f \"./router/index.js\""
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.6",
+    "nodemon": "^1.12.1"
   }
 }
