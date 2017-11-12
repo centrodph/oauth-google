@@ -4,7 +4,4 @@ module.exports.googleAuth = passport.authenticate('google', {
   scope: ['profile', 'email']
 });
 
-module.exports.googleAuthCallback = (req, res) => {
-  console.log(req);
-  res.send({ result: 'works' });
-};
+module.exports.googleAuthCallback = passport.authenticate('google');

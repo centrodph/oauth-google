@@ -1,8 +1,12 @@
 const express = require('express');
 const http = require('http');
 const routes = require('./routes');
-
+const mongoose = require('mongoose');
 //config
+const config = require('./config/keys');
+mongoose.connect(config.mongoURL);
+require('./models/User');
+
 const app = new express();
 
 //routes
