@@ -8,3 +8,8 @@
 module.exports.homepageCrl = (req, res) => {
   res.send({ result: 'works' });
 };
+
+module.exports.loginCrl = (req, res) => {
+  const user = req.user;
+  res.send({ result: 'LOGIN', user });
+};

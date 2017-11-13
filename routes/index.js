@@ -23,5 +23,9 @@ module.exports = app => {
    *
    * @apiSuccess {Json} result.
    */
-  app.get('/auth/google/callback', oauthGoogle.googleAuthCallback);
+  app.get(
+    '/auth/google/callback',
+    oauthGoogle.googleAuthCallback,
+    static.loginCrl
+  );
 };
