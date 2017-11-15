@@ -8,7 +8,7 @@ module.exports = app => {
    *
    * @apiSuccess {Json} result.
    */
-  app.get('/', static.homepageCrl);
+  app.get('/', static.homepageCtrl);
 
   /**
    * @api {get} /auth/google Init Google Auth Flow
@@ -23,9 +23,19 @@ module.exports = app => {
    *
    * @apiSuccess {Json} result.
    */
-  app.get(
-    '/auth/google/callback',
-    oauthGoogle.googleAuthCallback,
-    static.loginCrl
-  );
+  app.get('/auth/google/callback', oauthGoogle.googleAuthCallback);
+  /**
+   * @api {get} /auth/logout Detroy the session
+   * @apiGroup OAUTH
+   *
+   * @apiSuccess {Json} result.
+   */
+  app.get('/auth/logout', static.logoutCtrl);
+  /**
+   * @api {get} /auth/user Show the current user
+   * @apiGroup OAUTH
+   *
+   * @apiSuccess {Json} result.
+   */
+  app.get('/auth/user', static.currentUserCtrl);
 };
